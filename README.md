@@ -5,6 +5,8 @@
 2. jdk1.8.0_241 needs to be installed as well. GlassFish server 4.1.1 version was used.
 
 3. JSF - Java Server Faces technology was used.
+
+4. To view the source code for JSF pages, open the "web" folder.
    
-4. Check Images folder to see how it works.
+5. Check Images folder to see how it works.
 
