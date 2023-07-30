@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+    <h:head>
+        <title>Dodaj stranica</title>
+    </h:head>
+    <h:body>
+        <h1>Dodaj oglas:</h1>
+        <h:form>
+            <div>
+                <span>Opstina:</span>
+                <h:selectOneMenu value ="#{controler.oglas.opstina}">
+                    <c:forEach items="#{controler.oglas.opstine}" var="opstina">
+                        <f:selectItem itemLabel="#{opstina}" itemValue="#{opstina}"></f:selectItem>
+                    </c:forEach>
+                </h:selectOneMenu>
+            </div>
+            
+            <div>
+                <span>Tip:</span>
+                <h:inputText value="#{controler.oglas.tip}"></h:inputText>
+            </div>
+            
+            <div>
+                <span>Povrsina:</span>
+                <h:inputText id = "povrsina" value="#{controler.oglas.povrsina}" validatorMessage="Povrsina mora biti izmedju 20 i 150 kvadrata!">
+                    <f:validateLongRange minimum="20" maximum="150"></f:validateLongRange>
+                </h:inputText>
+                <h:message for="povrsina"></h:message>
+            </div>
+            
+             <div>
+                <span>Cena:</span>
+                <h:inputText value="#{controler.oglas.cena}"></h:inputText>
+            </div>
+            
+             <div>
+                <span>Kontakt telefon:</span>
+                <h:inputText id="telefon" value="#{controler.oglas.kontakt}" validatorMessage="Telefon mora poceti sa +381 i sadrzati 12 ili 13 cifara!">
+                    <f:validateRegex pattern="[+][3][8][1][\d]{9,10}"></f:validateRegex>
+                </h:inputText>
+                <h:message for="telefon"></h:message>
+            </div>
+            <h:commandButton action="#{controler.addNewOglas()}" value="Dodaj"></h:commandButton>
+            
+        </h:form>
+        <h:form>
+            <h:commandButton action="#{controler.signOut()}" value="Odjavi se"></h:commandButton>
+        </h:form>
+    </h:body>
+</html>
+
