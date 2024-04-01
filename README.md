@@ -1,4 +1,4 @@
-# Oglasi
+# Listing ads - Preview is available in images folder
 
 1. This project was made in Java NetBeans IDE 8.2 . In order to run this program, NetBeans IDE 8.2 version is required. Project should be put in C:/Users/Documents/NetBeansProjects. No database must be made for this project because we haven't used Servlets at all.
 
